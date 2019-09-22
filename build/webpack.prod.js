@@ -2,6 +2,7 @@ const merge = require('webpack-merge')
 const commonConfig = require('./webpack.common.js')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const TerserJSPlugin = require('terser-webpack-plugin')
 
 const prodConfig = {
   mode: 'production',
@@ -31,7 +32,7 @@ const prodConfig = {
     ]
   },
   optimization: {
-    minimizer: [new OptimizeCssAssetsPlugin({})],
+    minimizer: [new TerserJSPlugin({}), new OptimizeCssAssetsPlugin({})]
   },
   output: {
     filename: '[name].[hash].js',
