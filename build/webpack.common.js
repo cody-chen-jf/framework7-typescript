@@ -26,7 +26,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules\/(?!(dom7|swiper)\/).*/,
+        exclude: /node_modules/,
       },
       {
         test: /\.vue$/,
