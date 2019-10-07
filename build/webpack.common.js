@@ -12,12 +12,12 @@ console.log('NODE_ENV: ', process.env.NODE_ENV)
 
 module.exports = {
   entry: {
-    main: './src/app.js'
+    main: './src/app.ts'
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json', '.ts'],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js',
+      vue$: 'vue/dist/vue.esm.js',
       '@': resolvePath('src')
     }
   },
@@ -26,7 +26,21 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
+        enforce: 'pre',
+        test: /\.(js|vue|ts)$/,
+        loader: 'eslint-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
         exclude: /node_modules/,
+        options: {
+          appendTsSuffixTo: [/\.vue$/]
+        }
       },
       {
         test: /\.vue$/,
@@ -80,6 +94,11 @@ module.exports = {
         vendors: {
           test: /[\\/]node_modules[\\/]/,
           priority: -10
+        },
+        framework7: {
+          name: 'chunk-framework7', // split elementUI into a single package
+          priority: 20, // the weight needs to be larger than libs and app or it will be packaged into libs or app
+          test: /[\\/]node_modules[\\/]framework7-*(.*)/ // in order to adapt to cnpm
         },
         default: {
           minChunks: 2,

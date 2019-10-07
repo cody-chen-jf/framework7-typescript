@@ -1,7 +1,8 @@
 module.exports =  {
   extends: [
     "plugin:vue/essential",
-    "eslint-config-standard"
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
   ],
   parserOptions: {
     parser: require.resolve('@typescript-eslint/parser')
@@ -15,8 +16,9 @@ module.exports =  {
     "@typescript-eslint"
   ],
   rules: {
-    'no-undef': 'off',
-    'no-unused-vars': 'off',
+    "function-paren-newline": "off",
+    "@typescript-eslint/explicit-member-accessibility": "off",
+    "@typescript-eslint/explicit-function-return-type": "off"
   }
 };
 
