@@ -72,7 +72,9 @@ export default class App extends Vue {
     routes: routes
   }
 
-  private created() {}
+  private created() {
+    console.log(this.$t('login'))
+  }
 
   mounted() {}
 }

@@ -17,12 +17,13 @@
         Praesent vitae metus ac quam rhoncus mattis vel et nisi. Aenean aliquet, felis quis dignissim iaculis, lectus
         quam tincidunt ligula, et venenatis turpis risus sed lorem. Morbi eu metus elit. Ut vel diam dolor.
       </p>
-      <div class="hairline-border">text</div>
+      <div class="hairline-border">{{ $t('home') }}</div>
+      <div class="button" @click="switchLanguage">switch lang</div>
     </f7-block>
   </f7-page>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 #about {
   .test {
     background: rebeccapurple;
@@ -63,5 +64,9 @@ import { Vue, Component } from 'vue-property-decorator'
 @Component
 export default class About extends Vue {
   private created() {}
+
+  private switchLanguage() {
+    this.$i18n.locale = 'en-US'
+  }
 }
 </script>

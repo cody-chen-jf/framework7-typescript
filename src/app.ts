@@ -8,6 +8,7 @@ import Framework7 from 'framework7/framework7.esm.bundle.js'
 import Framework7Vue from 'framework7-vue/framework7-vue.esm.bundle.js'
 
 import './utils/flexble.ts'
+import i18n from '@/locale'
 
 // Import F7 Styles
 import 'framework7/css/framework7.bundle.css'
@@ -27,7 +28,7 @@ Framework7.use(Framework7Vue)
 new Vue({
   el: '#app',
   template: '<app/>',
-
+  i18n,
   // Register App Component
   components: {
     app: App
