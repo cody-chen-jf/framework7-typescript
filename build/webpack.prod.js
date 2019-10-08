@@ -3,6 +3,12 @@ const commonConfig = require('./webpack.common.js')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const TerserJSPlugin = require('terser-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const path = require('path')
+
+function resolvePath(dir) {
+  return path.join(__dirname, '..', dir)
+}
 
 const prodConfig = {
   mode: 'production',
@@ -25,8 +31,15 @@ const prodConfig = {
             loader: 'css-loader',
             options: { importLoaders: 2 }
           },
+          'postcss-loader',
           'sass-loader',
-          'postcss-loader'
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              sourceMap: true,
+              resources: [resolvePath('src/css/function.scss')]
+            },
+          }
         ]
       }
     ]
@@ -42,7 +55,8 @@ const prodConfig = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css'
-    })
+    }),
+    new CleanWebpackPlugin()
   ]
 }
 

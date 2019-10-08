@@ -1,6 +1,11 @@
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const commonConfig = require('./webpack.common.js')
+const path = require('path')
+
+function resolvePath(dir) {
+  return path.join(__dirname, '..', dir)
+}
 
 const devConfig = {
   mode: 'development',
@@ -29,8 +34,15 @@ const devConfig = {
             loader: 'css-loader',
             options: { importLoaders: 2 }
           },
+          'postcss-loader',
           'sass-loader',
-          'postcss-loader'
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              sourceMap: true,
+              resources: [resolvePath('src/css/function.scss')]
+            },
+          }
         ]
       }
     ]

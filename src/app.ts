@@ -7,12 +7,15 @@ import Framework7 from 'framework7/framework7.esm.bundle.js'
 // Import F7 Vue Plugin
 import Framework7Vue from 'framework7-vue/framework7-vue.esm.bundle.js'
 
+import './utils/flexble.ts'
+
 // Import F7 Styles
 import 'framework7/css/framework7.bundle.css'
 
+import './css/reset.scss'
 // Import Icons and App Custom Styles
 import './css/icons.css'
-import './css/app.css'
+import './css/app.scss'
 
 // Import App Component
 import App from './app.vue'
