@@ -3,9 +3,10 @@
   "version": "2.0.0",
   "description": "Framework7 Vue Webpack starter app template",
   "scripts": {
-    "dev": "NODE_ENV=development webpack-dev-server --config ./build/webpack.dev.js",
-    "dev-build": "NODE_ENV=development webpack --config ./build/webpack.dev.js",
-    "build": "NODE_ENV=production webpack --config ./build/webpack.prod.js",
+    "dev": "NODE_ENV=dev webpack-dev-server --config ./build/webpack.dev.js",
+    "qa": "NODE_ENV=qa webpack-dev-server --config ./build/webpack.dev.js",
+    "dev-build": "NODE_ENV=dev webpack --config ./build/webpack.dev.js",
+    "build": "NODE_ENV=prod webpack --config ./build/webpack.prod.js",
     "copy-fonts": "cpy node_modules/framework7-icons/fonts/*.* src/fonts && cpy node_modules/material-design-icons/iconfont/*.{eot,ttf,woff,woff2} src/fonts",
     "postinstall": "npm run copy-fonts"
   },

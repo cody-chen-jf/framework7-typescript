@@ -60,7 +60,8 @@
 // Import Routes
 import { Vue, Component } from 'vue-property-decorator'
 import routes from './routes'
-import _ from 'lodash'
+import UserService from '@/services/user-service'
+import { UserData } from '@/types/user'
 
 @Component
 export default class App extends Vue {
@@ -72,8 +73,10 @@ export default class App extends Vue {
     routes: routes
   }
 
-  private created() {
+  private async created() {
     console.log(this.$t('login'))
+    const user: UserData = await UserService.getUser()
+    console.log('user === ', user.content[1].formNumber)
   }
 
   mounted() {}

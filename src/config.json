@@ -1,0 +1,52 @@
+{
+  "dev":{
+    "oauthHost" : "http://oauthqa2.oocl.com",
+    "versionHost": "https://mbcapp.azurewebsites.net",
+    "oneprotalHost" : "https://www.easy-mock.com/mock/5d677d2eb7081634321a5143/test_get",
+    "eapvHost" : "http://146.222.94.19:8088",
+    "sentryKey" : "https://fd5020da936747b4918bca914bd04f34@sentry.io/1265819",
+    "JPushAppKey" : "96c3279e7412692e0a3d3759",
+    "flurry" : {
+      "iosKey": "G8TTS9N9CQJSC64X8QV8",
+      "androidKey": "K3Q2PVTNQBPBYCB97MSP"
+    }
+  },
+  "qa":{
+    "oauthHost" : "http://oauthqa2.oocl.com",
+    "versionHost": "https://mbcapp.azurewebsites.net",
+    "oneprotalHost" : "http://localhost:3000",
+    "sentryKey" : "https://fd5020da936747b4918bca914bd04f34@sentry.io/1265819",
+    "JPushAppKey" : "96c3279e7412692e0a3d3759",
+    "flurry" : {
+      "iosKey": "G8TTS9N9CQJSC64X8QV8",
+      "androidKey": "K3Q2PVTNQBPBYCB97MSP"
+    }
+  },
+  "pp":{
+    "oauthHost" : "https://oauth.oocl.com",
+    "versionHost": "https://mbcapp.azurewebsites.net",
+    "oneprotalHost" : "http://localhost:3000",
+    "sentryKey" : "https://fd5020da936747b4918bca914bd04f34@sentry.io/1265819",
+    "JPushAppKey" : "96c3279e7412692e0a3d3759",
+    "flurry" : {
+      "iosKey": "G8TTS9N9CQJSC64X8QV8",
+      "androidKey": "K3Q2PVTNQBPBYCB97MSP"
+    }
+  },
+  "prod":{
+    "oauthHost" : "https://oauth.oocl.com",
+    "versionHost": "https://mbcapp.azurewebsites.net",
+    "oneprotalHost" : "https://www.easy-mock.com/mock/5d677d2eb7081634321a5143/test_get",
+    "sentryKey" : "https://fd5020da936747b4918bca914bd04f34@sentry.io/1265819",
+    "JPushAppKey" : "b9be84deea6244d504e99ceb",
+    "flurry" : {
+      "iosKey": "FP8T8PB8NSYNB4RPBXYG",
+      "androidKey": "XQB9DDJQYMMVZRGMV33R"
+    }
+  },
+  "login": {
+    "redirectUri": "http://mobileoauth/easapp",
+    "clientId" : "6a4e409ea4a4441dbd4c6de60523f35c",
+    "clientSecret" : "523e3e9c500a45af92ab1bb8aca4dbb1"
+  }
+}

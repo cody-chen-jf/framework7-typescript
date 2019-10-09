@@ -60,10 +60,14 @@
 
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
+import { UserData } from '@/types/user'
+import UserService from '@/services/user-service'
 
 @Component
 export default class About extends Vue {
-  private created() {}
+  private async created() {
+    const user: UserData = await UserService.getUser()
+  }
 
   private switchLanguage() {
     this.$i18n.locale = 'en-US'
