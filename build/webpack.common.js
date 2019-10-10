@@ -2,6 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const webpack = require('webpack')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const version = require('../package.json').version;
 
 function resolvePath(dir) {
   return path.join(__dirname, '..', dir)
@@ -74,6 +75,7 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      '__VERSION__': JSON.stringify(version)
     }),
     new HtmlWebpackPlugin({ template: 'src/index.html' }),
     new VueLoaderPlugin()

@@ -62,6 +62,7 @@ import { Vue, Component } from 'vue-property-decorator'
 import routes from './routes'
 import UserService from '@/services/user-service'
 import { UserData } from '@/types/user'
+import nativePluginHelper from '@/utils/nativePlugin'
 
 @Component
 export default class App extends Vue {
@@ -74,6 +75,10 @@ export default class App extends Vue {
   }
 
   private async created() {
+    setTimeout(() => {
+      nativePluginHelper.splashscreen.hide()
+    }, 500)
+
     console.log(this.$t('login'))
     const user: UserData = await UserService.getUser()
     console.log('user === ', user.content[1].formNumber)

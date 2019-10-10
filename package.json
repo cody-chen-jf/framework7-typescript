@@ -1,6 +1,6 @@
 {
   "name": "framework7-template-vue-webpack",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "Framework7 Vue Webpack starter app template",
   "scripts": {
     "dev": "NODE_ENV=dev webpack-dev-server --config ./build/webpack.dev.js",
@@ -32,6 +32,7 @@
   },
   "homepage": "http://framework7.io/vue/",
   "dependencies": {
+    "@babel/polyfill": "^7.6.0",
     "axios": "^0.19.0",
     "framework7": "^4.5.1",
     "framework7-icons": "^2.3.1",

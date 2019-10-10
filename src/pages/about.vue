@@ -62,15 +62,17 @@
 import { Vue, Component } from 'vue-property-decorator'
 import { UserData } from '@/types/user'
 import UserService from '@/services/user-service'
+import nativePluginHelper from '@/utils/nativePlugin'
 
 @Component
 export default class About extends Vue {
   private async created() {
+    nativePluginHelper.sentry.captureException(new Error('hello world'))
     const user: UserData = await UserService.getUser()
   }
 
   private switchLanguage() {
-    this.$i18n.locale = 'en-US'
+    this.$i18n.locale = 'zh-TW'
   }
 }
 </script>
